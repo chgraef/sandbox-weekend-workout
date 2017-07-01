@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
@@ -28,7 +29,7 @@ namespace CshConsoleApplication4
 
             private void RunFalsyTest(Int32[] left, Int32[] right)
             {
-                String leftStr = EnumerableToString(left);
+                String leftStr  = EnumerableToString(left);
                 String rightStr = EnumerableToString(right);
 
                 Assert.IsFalse(AreUniquelyEqual(left, right),
