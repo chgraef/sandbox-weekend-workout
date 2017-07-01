@@ -30,7 +30,7 @@ namespace CshConsoleApplication7
 
         static void Main(string[] args)
         {
-            var priorities   = new String[] { "lettuce", "apple" };
+            var priorities   = new String[] { "mango", "banana" };
             var greenBasket  = new String[] { "orange", "banana", "tomato", 
                                               "passionfruit", "mango", "mango" };
 
