@@ -57,7 +57,7 @@ int *int32_to_digits(int value, size_t *out_count)
         {
             const int temp    = digits[right - 1];
             digits[right - 1] = digits[left];
-            digits[left]    = temp;
+            digits[left]      = temp;
         }
 
         if (out_count) *out_count = count;
