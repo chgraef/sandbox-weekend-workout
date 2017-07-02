@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <assert.h>
 
+/* CuTest by Asim Jalis
+ * http://cutest.sourceforge.net/
+ */
 #include "CuTest.h"
 #include "value_sum.h"
 
