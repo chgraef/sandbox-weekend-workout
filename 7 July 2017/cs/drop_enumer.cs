@@ -8,6 +8,10 @@ namespace CshConsoleApplication10
     {
         public static IEnumerable<T> Drop<T>(this IEnumerable<T> enumer, Int32 count)
         {
+            if (count < 0) {
+                throw new ArgumentOutOfRangeException("count cannot be negative");
+            }
+            
             return enumer.Reverse().Take(count).Reverse();
         }
     }
