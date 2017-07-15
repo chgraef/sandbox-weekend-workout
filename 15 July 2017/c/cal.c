@@ -46,7 +46,6 @@ int main(void)
 {
     cal(31, Month_August, 2017);
 
-    (void)getchar();
     return EXIT_SUCCESS;
 }
 
