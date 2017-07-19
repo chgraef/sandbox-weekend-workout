@@ -65,7 +65,7 @@ int get_day_count_for_month(enum Month month, int year)
         [Month_May]       = 31,
         [Month_June]      = 30,
         [Month_July]      = 31,
-        [Month_August]    = 30,
+        [Month_August]    = 31,
         [Month_September] = 30,
         [Month_October]   = 31,
         [Month_November]  = 30,
