@@ -41,16 +41,12 @@ int main(void)
     {
         brave_romans_talk(brave_romans, romans_count);
 
-        (void)printf("%p\n", ((struct Augustus*)brave_romans[0]));
-        (void)printf("%p\n", ((struct Augustus*)brave_romans[0]));
-
         brave_romans_delete(brave_romans, romans_count); 
         brave_romans = NULL;
     }
 
     (void)puts("Success...");
 
-    (void)getchar();
     return EXIT_SUCCESS;
 }
 
