@@ -1,4 +1,3 @@
-
 let app = angular.module('my-app', []);
 
 app.controller('menu-controller', [
@@ -25,6 +24,7 @@ app.controller('menu-controller', [
         if (newValue) {
           alert("You have selected " + newValue);
         }
-      });
+      }
+    );
   }
 ]);
