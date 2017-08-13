@@ -20,6 +20,13 @@ class StateStack:
 
         return undone_state
 
+    def redo(self, times=1):
+        redone_index = min(self._index + times, len(self._states) - 1)
+        redone_state = self._states[redone_index]
+        self._index  = redone_index
+
+        return redone_state
+
 class CalculatorState:
     def __init__(self, value):
         self._value = value
@@ -48,6 +55,9 @@ class Calculator:
     def undo(self, times=1):
         self._states.undo(times)
 
+    def redo(self, times=1):
+        self._states.redo(times)
+
     def __str__(self):
         value = self.value()
         return str(value)
@@ -55,14 +65,20 @@ class Calculator:
 calculator = Calculator()
 
 while True:
-    print('>>>', end=' ')
-    user_input = input()
+    try:
+        print('>>>', end=' ')
+        user_input = input()
 
-    if user_input.isdigit():
-        value = int(user_input)
-        calculator.add(value)
-    elif user_input.startswith('u'):
-        calculator.undo()
+        if user_input.isdigit():
+            value = int(user_input)
+            calculator.add(value)
+        elif user_input.startswith('u'):
+            calculator.undo()
+        elif user_input.startswith('r'):
+            calculator.redo()
+        else:
+            raise Exception('Input invalid.')
 
-    print(calculator)
-
+        print(calculator)
+    except Exception as e:
+        print(e)
