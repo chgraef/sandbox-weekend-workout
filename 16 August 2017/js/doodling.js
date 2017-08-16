@@ -40,9 +40,9 @@ function generateRandomString() {
     return result;
 }
 
-const count = 64;
+const COUNT = 64;
 
-for (let times = 0; times < count; ++times) {
+for (let times = 0; times < COUNT; ++times) {
     const randString = generateRandomString();
     console.log(randString);
 }
