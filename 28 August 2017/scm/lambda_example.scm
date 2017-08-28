@@ -11,3 +11,11 @@
     + (map (lambda (x) (* x x)) values)))
   
 (print total-of-squares)
+
+; Example 4
+(define (sum-squared-two-max x y z)
+  (apply + 
+    (map (lambda (x) (* x x))
+         (cdr (list-sort (list x y z))))))
+
+(print (sum-squared-two-max 6 2 4))
