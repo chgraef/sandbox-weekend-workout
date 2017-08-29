@@ -5,5 +5,8 @@
           (map (lambda (x) (string-concat (list separator x)))
                (cdr args))))))
 
-(define cadence (list-join "-" "peanut" "butter" "jelly" "scheme!"))
+(define words     (list "peanut" "butter" "jelly" "scheme!"))
+(define separator "-")
+(define cadence   (apply list-join (cons separator words)))
+
 (print cadence)
