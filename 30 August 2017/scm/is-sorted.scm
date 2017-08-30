@@ -1,3 +1,6 @@
+; or just: (< 0 1 2 3 4)
+; :)
+
 (define (sorted? lst)
   (or (< (length lst) 2)
       (and (<= (car lst) (cadr lst))
