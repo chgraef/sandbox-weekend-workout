@@ -1,0 +1,10 @@
+(define (n-split str n)
+  (if (or (zero? (string-length str))
+          (zero? n))
+      `()
+      (let ((m (min n (string-length str))))
+           (cons (substring str 0 m)
+                 (n-split (substring str m (string-length str))
+                  n)))))
+
+(n-split "Alea Iacta Est. The Die is Cast..." 4)
