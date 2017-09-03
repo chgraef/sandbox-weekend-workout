@@ -1,0 +1,10 @@
+(define (list-take-while fn lst)
+  (and (not (null? lst))
+       (let ((x    (car lst))
+             (rest (list-take-while fn (cdr lst))))
+            (if (fn x) (cons x rest)
+                `()))))
+
+(list-take-while odd?  `(1 1 0 1 1 1))
+(list-take-while odd?  `(0 1 1 1))
+(list-take-while even? `(0 1 0 1 1 1))
