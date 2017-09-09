@@ -1,17 +1,21 @@
 (define (make-st) `())
 
+(define (make-pair key val) (cons key val))
+(define (pair-key pair) (car pair))
+(define (pair-val pair) (cdr pair))
+
 (define (st-get st key)
   (if (null? st) `()
       (let ((kv-pair (car st)))
-           (let ((cur-key (car kv-pair))
-                 (cur-val (cdr kv-pair)))
+           (let ((cur-key (pair-key kv-pair))
+                 (cur-val (pair-val kv-pair)))
               (if (eq? key cur-key) cur-val
                   (st-get (cdr st) key))))))
 
 (define (st-add st key val)
-  (let ((new-pair (cons key val)))
+  (let ((new-pair (make-pair key val)))
        (cond [(null? st) (list new-pair)]
-             [(eq? (caar st) key) (st-add (cdr st) key val)]
+             [(eq? (pair-key (car st)) key) (st-add (cdr st) key val)]
              [else (cons (car st) (st-add (cdr st) key val))])))
 
 (let ((st (make-st)))
