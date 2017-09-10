@@ -1,3 +1,7 @@
+;; My lame linear congruential random number generator.
+;; Constant values were borrowed from "Numerical recipes", are listed here:
+;; [href.] https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use
+
 (define (make-rand-generator seed)
   (let ((a 1664525)
         (b 1013904223)
