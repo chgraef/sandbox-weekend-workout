@@ -1,0 +1,12 @@
+(define (partition fn lst)
+  (if (null? lst) `(())
+      (let ((x    (car lst))
+            (rest (partition fn (cdr lst))))
+          (let ((left  (car rest))
+                (right (cdr rest)))
+               (if (fn x)
+                   (cons (cons x left) right)
+                   (cons left (cons x right)))))))
+
+(define range (iota 10))
+(partition (lambda (x) (< x 5)) range)
