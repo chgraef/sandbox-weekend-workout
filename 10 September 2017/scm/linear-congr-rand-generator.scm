@@ -9,7 +9,7 @@
       (let ((x seed))
            (lambda ()
              (set! x (mod (+ (* a x) b) m))
-             (/ x m)))))
+             (/ x (- m 1))))))
 
 (define random (make-rand-generator 0))
 
