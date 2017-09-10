@@ -1,5 +1,4 @@
-;; Original problem defined at:
-;; [href.] https://see.stanford.edu/materials/icsppcs107/30-Scheme-Functions.pdf
+;; Repeat every item three times.
 ;;
 ;; Non-recursive solution.
 
