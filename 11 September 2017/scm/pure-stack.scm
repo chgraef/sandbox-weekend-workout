@@ -1,17 +1,17 @@
-;; Kind of slow, but pure functional stack in Scheme.
+;; Pure functional stack implementation in Scheme.
 
 (define (make-stack) `())
 
 (define (stack-length stack) (length stack))
 
 (define (stack-push stack item)
-  (reverse (cons item (reverse stack))))
+  (cons item stack))
 
 (define (stack-pop stack)
-  (reverse (cdr (reverse stack))))
+  (cdr stack))
 
 (define (stack-last stack)
-  (car (reverse stack)))
+  (car stack))
 
 (let ([stack (make-stack)])
      (for-each (lambda (c) (set! stack (stack-push stack c)))
@@ -21,3 +21,4 @@
                                     (begin (print (stack-last stk))
                                            (traverse-stack (stack-pop stk)))))])
              (traverse-stack stack)))
+
