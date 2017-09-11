@@ -10,7 +10,7 @@
 (define (stack-pop stack)
   (cdr stack))
 
-(define (stack-last stack)
+(define (stack-top stack)
   (car stack))
 
 (let ([stack (make-stack)])
@@ -18,7 +18,7 @@
                (string-split "ABCD" ""))
      (letrec ([traverse-stack (lambda (stk)
                                 (if (zero? (stack-length stk)) `()
-                                    (begin (print (stack-last stk))
+                                    (begin (print (stack-top stk))
                                            (traverse-stack (stack-pop stk)))))])
              (traverse-stack stack)))
 
