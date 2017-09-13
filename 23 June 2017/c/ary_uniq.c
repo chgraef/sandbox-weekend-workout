@@ -11,8 +11,8 @@ uint8_t *ary_uniq(const uint8_t *ary, size_t ary_size, size_t *res_size)
 
     uint8_t lookup[UINT8_MAX] = { 0 };
 
-    uint8_t *result = (uint8_t*)calloc(ary_size, sizeof(*result));
     *res_size = 0;
+    uint8_t *result = (uint8_t*)calloc(ary_size, sizeof(*result));
 
     if (result)
     {
