@@ -2,9 +2,6 @@
   ([n] (generate-sieve
          (range 2 n) (int (Math/sqrt n))))
   ([sieve x]
-          ;(println x)
-          ;(println sieve)
-          ;(newline)
           (if (< x 2) sieve
               (generate-sieve
                 (filter #(or (> (mod % x) 0)
