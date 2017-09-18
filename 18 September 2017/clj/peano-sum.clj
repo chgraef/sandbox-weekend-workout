@@ -4,5 +4,5 @@
         :else (if (or (and (< a 0)
                            (< b 0))
                       (and (> a 0)
-                           (> b 0))) (peano-sum (inc a) (dec b))
-                  (peano-sum (inc (min a b)) (dec (max a b))))))
+                           (> b 0))) (recur (inc a) (dec b))
+                  (recur (inc (min a b)) (dec (max a b))))))
