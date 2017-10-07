@@ -1,0 +1,10 @@
+(define (insert-before insert-before? lst x)
+  (if (null? lst) `()
+      (let ((y    (car lst))
+            (rest (cdr lst)))
+          (if (insert-before? y)
+              (append (list x y)
+                      (insert-before insert-before? rest x))
+              (cons y (insert-before insert-before? rest x))))))
+
+(insert-before zero? `(0 1 7 4 0 0) 666)
