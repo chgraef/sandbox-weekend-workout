@@ -1,0 +1,7 @@
+(define (all-same? lst)
+  (or (null? lst)
+      (eq? (length lst) 1)
+      (let ((x (car  lst))
+            (y (cadr lst)))
+          (and (eq? x y)
+               (all-same? (cdr lst))))))
