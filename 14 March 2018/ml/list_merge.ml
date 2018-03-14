@@ -1,13 +1,11 @@
 let rec list_merge lst1 lst2 = match lst1 with
-    | []     -> lst2
-    | hd::tl -> match lst2 with
-        | []     -> lst1
-        | hd::tl -> let x = List.hd lst1
-                    and y = List.hd lst2 in
-                    if x < y then
-                        x :: list_merge (List.tl lst1) lst2
-                    else
-                        y :: list_merge lst1 (List.tl lst2);;
+    | []       -> lst2
+    | hdx::tlx -> match lst2 with
+        | []       -> lst1
+        | hdy::tly -> if hdx < hdy then
+                          hdx :: list_merge tlx lst2
+                      else
+                          hdy :: list_merge lst1 tly;;
 
 let vals = list_merge [1; 3; 4; 5] [3; 7];;
 
@@ -17,6 +15,6 @@ let rec list_print = (fun to_s sep lst -> match lst with
     | hd::tl -> begin
                     print_string (to_s hd);
                     print_string sep;
-                    list_print to_s sep (List.tl lst)
+                    list_print to_s sep tl
                 end);
     in (list_print string_of_int "|" vals);;
