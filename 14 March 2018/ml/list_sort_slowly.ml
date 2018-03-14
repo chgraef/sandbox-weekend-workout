@@ -2,9 +2,9 @@ let rec list_insert_sorted lst x =
     match lst with
         | []       -> [x]
         | hd :: tl -> if x <= hd then
-                        x :: hd :: tl
-                    else
-                        hd :: list_insert_sorted tl x;;
+                          x :: hd :: tl
+                      else
+                          hd :: list_insert_sorted tl x;;
 
 let list_sort_slowly lst =
     let rec list_sort_slowly_helper res lst =
